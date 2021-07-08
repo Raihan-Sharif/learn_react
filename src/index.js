@@ -1,62 +1,16 @@
-/* eslint-disable react/prefer-stateless-function */
 import React from 'react';
-import ReactDom from 'react-dom';
+import ReactDOM from 'react-dom';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-// const element = React.createElement('h1', { className: 'HeaderClass' }, 'Hello World!');
-const tabIndex = 0;
-// Example: start- functional Component
-// function UserElement({ user, locale }) {
-//     return (
-//         <h1 className="HeaderClass" tabIndex={tabIndex}>
-//             <span> Hello {user}!</span>
-//             <h5>{new Date().toLocaleString(locale)}</h5>
-//             <img src="" alt="opps!" />
-//         </h1>
-//     );
-// }
-// Example: End - functional Component
+ReactDOM.render(
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>,
+    document.getElementById('root')
+);
 
-// Example: start- class Component
-class UserElement extends React.Component {
-    render() {
-        const { locale, children } = this.props;
-        return (
-            <div className="HeaderClass" tabIndex={tabIndex}>
-                <h2> Hello {children}!</h2>
-                <h5>{new Date().toLocaleString(locale)}</h5>
-                <img src="" alt="opps!" />
-            </div>
-        );
-    }
-}
-// Example: End - class Component
-
-/*
-{
-  type:'h1',
-  props:{
-    className:'HeaderClass',
-    tabIndex:0,
-    children:[
-      {
-        type:'span',
-        props:{
-          children:'Hello World!'
-        }
-      },
-          {
-        type:'img',
-        props:{
-          src:'',
-          alt:'Hello'
-        }
-      }
-    ]
-  }
-}
-*/
-// console.log(element);
-
-/* <UserElement user="Raihan" locale="bn-BD" /> */
-
-ReactDom.render(<UserElement locale="bn-BD">Raihan</UserElement>, document.getElementById('root'));
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
