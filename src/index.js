@@ -1,17 +1,38 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import reactDom from 'react-dom';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+// const element = React.createElement('h1', { className: 'HeaderClass' }, 'Hello World!');
+const tabIndex = 0;
+const element = (
+    <h1 className="HeaderClass" tabIndex={tabIndex}>
+        <span> Hello World!</span>
+        <img src="" alt="Hello" />
+    </h1>
 );
+/*
+{
+  type:'h1',
+  props:{
+    className:'HeaderClass',
+    tabIndex:0,
+    children:[
+      {
+        type:'span',
+        props:{
+          children:'Hello World!'
+        }
+      },
+          {
+        type:'img',
+        props:{
+          src:'',
+          alt:'Hello'
+        }
+      }
+    ]
+  }
+}
+*/
+console.log(element);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+reactDom.render(element, document.getElementById('root'));
