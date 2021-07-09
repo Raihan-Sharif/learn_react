@@ -1,10 +1,14 @@
-import Clock from './Components/Clock';
+import ClockList from './Components/clockList';
 
 function App() {
+    console.log('App component render.');
+    const clockItemsData = [1, 2, 3];
     return (
         <div>
-            {' '}
-            Hello world! Now this time is <Clock locale="bn-BD" />
+            <center>
+                Hello world! Now this time is{' '}
+                <ClockList clockItems={clockItemsData} show="Clock List" locale="en-US" />
+            </center>
         </div>
     );
 }

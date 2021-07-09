@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // this operator: when we use call back function it cannot access it's parent objects property.
+    // to access this property we can use .bind(this) or arrow function. here demonstrate this things.
+
+    const data = {
+      name: "My data",
+      list: ["Raihan", "Tanha", "Ehan"],
+      printList: function printData() {
+        // this.list.forEach((element) => {
+        //   // here this.name can be accessible for arrow function
+        //   console.log(`${this.name}: ${element}`);
+        // });
+
+        this.list.forEach(
+          function (element) {
+            console.log(`${this.name}: ${element}`);
+            // here this.name can be accessible for .bind(this) in callback function
+          }.bind(this)
+        );
+      },
+    };
+
+    data.printList();
+  </script>
+</html>
