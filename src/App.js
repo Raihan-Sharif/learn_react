@@ -1,4 +1,5 @@
 import ClockList from './Components/clockList';
+import Form from './Components/form';
 
 function App() {
     console.log('App component render.');
@@ -8,6 +9,9 @@ function App() {
             <center>
                 Hello world! Now this time is{' '}
                 <ClockList clockItems={clockItemsData} show="Clock List" locale="en-US" />
+                <br />
+                <br />
+                <Form />
             </center>
         </div>
     );
