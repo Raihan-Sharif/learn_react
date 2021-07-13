@@ -1,5 +1,6 @@
 import ClockList from './Components/clockList';
 import Form from './Components/form';
+import Calculator from './Components/TempCalculator/calculator';
 
 function App() {
     console.log('App component render.');
@@ -12,6 +13,7 @@ function App() {
                 <br />
                 <br />
                 <Form />
+                <Calculator />
             </center>
         </div>
     );
